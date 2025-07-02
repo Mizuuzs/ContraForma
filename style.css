@@ -1,0 +1,430 @@
+﻿/* ===========================
+   Estilos Globais
+   =========================== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #15151A;
+  color: white;
+  font-family: 'Wix Madefor Text', sans-serif;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Meta viewport (no <head> do HTML)
+   ===========================
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+
+/* ===========================
+   Barra de Categorias
+   =========================== */
+#barra-categorias {
+  position: fixed;
+  top: 25px;
+  width: 100%;
+  background-color: #E21922;
+  display: flex;
+  justify-content: center;
+  gap: 500px;
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+.menu-lado {
+  display: flex;
+  gap: 15px;
+}
+#barra-categorias button {
+  background-color: #FFE5E5;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+#barra-categorias button::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  bottom: -5px;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+#barra-categorias button:hover::after {
+  height: 40px;
+  opacity: 1;
+  bottom: -6px;
+}
+#logo {
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===========================
+   Livro Interativo
+   =========================== */
+#livro-container {
+  position: relative;
+  width: 720px;
+  max-height: 480px;
+  perspective: 2000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.pagina {
+  width: 350px;
+  background: white;
+  color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+.pagina img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.escondida {
+  display: none;
+}
+#controles {
+  margin: 20px auto 50px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+#controles button {
+  background: #E21922;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Rubik Mono One', sans-serif;
+}
+#fullscreen-btn {
+  background: #000;
+  border: 1px solid white;
+  padding: 10px 16px;
+}
+
+/* ===========================
+   Seção “Sobre” (fade-in)
+   =========================== */
+#sobre-secao-custom {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  font-family: 'Wix Madefor Text', sans-serif;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+#sobre-secao-custom.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.lado-esquerdo {
+  flex: 1;
+  position: relative;
+  overflow: visible;
+}
+.fundo-estrelas {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: calc(60% + 200px);
+  height: 110%;
+  background: url("Img/estrelas.png") center/cover no-repeat;
+  opacity: 0.9;
+  z-index: 1;
+}
+.lado-esquerdo .etiquetas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  transform: rotate(-5deg);
+  top: 100px;
+  left: -50px;
+}
+.lado-direito {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-top: 40px;
+  z-index: 2;
+}
+
+/* ===========================
+   Balões Abaixo do PDF
+   =========================== */
+.pagina-com-balao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 900px;
+  margin: -280px auto 60px 500px;
+  position: relative;
+  z-index: 2;
+}
+.pagina-com-balao .pagina-png {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+.balao-fala {
+  position: relative;
+  background: white;
+  color: black;
+  padding: 25px 30px;
+  border: 5px solid red;
+  border-radius: 15px;
+  font-size: 18px;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.balao-fala::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 30px;
+  border: 20px solid transparent;
+  border-top-color: red;
+}
+
+/* ===========================
+   Seção “Quem Somos”
+   =========================== */
+#quem-secao-custom {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  margin-top: 60px;
+  background: url('Img/FUNDO.png') center/cover no-repeat;
+}
+.qs-conteudo {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.qs-titulo {
+  width: 320px;
+  margin-bottom: 40px;
+  margin-left: 450px;
+}
+.qs-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+.qs-botoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px 16px;
+  width: 280px;
+}
+.qs-btn {
+  width: 100%;
+  cursor: pointer;
+  transition: transform .2s;
+}
+.qs-btn:hover {
+  transform: scale(1.05);
+}
+.qs-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#qs-card {
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity .4s ease;
+  background: transparent;
+}
+#qs-card.show {
+  opacity: 1;
+}
+
+/* ===========================
+   Seção EXTRAS
+   =========================== */
+#extras-secao {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  padding-bottom: 3rem; /* espaço para botões */
+  margin: 0 auto;
+}
+#extras-secao .fundo {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+/* ===========================
+   Botões “Extras” – mesmo tamanho corrigido
+   =========================== */
+.botao {
+    position: absolute;
+    bottom: 1rem;
+    width: 200px; /* largura fixa */
+    height: 70px; /* altura fixa */
+    object-fit: contain; /* evita distorção */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+    .botao:hover {
+        transform: scale(1.05);
+    }
+
+/* Distribuição centralizada com espaçamento fixo */
+.esboco {
+    left: calc(50% - 330px);
+}
+
+.entrevista {
+    left: calc(50% - 100px);
+}
+
+.galeria {
+    left: calc(50% + 130px);
+}
+
+/* ===========================
+   Media Queries
+   =========================== */
+/* Tablets e smartphones maiores (≤768px) */
+@media (max-width: 768px) {
+  #barra-categorias {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  #barra-categorias .menu-lado {
+    gap: 10px;
+  }
+  #barra-categorias button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  #livro-container {
+    flex-direction: column;
+    width: 90vw;
+    max-height: none;
+  }
+  .pagina {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #controles {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #sobre-secao-custom {
+    flex-direction: column;
+    padding: 40px 10px;
+  }
+  .lado-esquerdo, .lado-direito {
+    width: 100%;
+  }
+  .qs-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .qs-botoes {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  #qs-card {
+    width: 90vw;
+  }
+  /* Ajusta botões extras em telas menores */
+  .botao {
+    width: 40%;
+  }
+}
+
+/* Smartphones pequenos (≤480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 100px;
+  }
+  #logo img {
+    height: 100px;
+  }
+  #barra-categorias {
+    gap: 10px;
+    padding: 8px;
+  }
+  #barra-categorias .menu-lado {
+    gap: 5px;
+  }
+  #barra-categorias button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  #livro-container {
+    width: 100vw;
+  }
+  .pagina {
+    width: 100%;
+  }
+  .qs-botoes {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+  }
+  .qs-btn {
+    flex: 0 0 auto;
+    width: 80px;
+  }
+  #qs-card {
+    width: 90vw;
+  }
+  /* Em mobile, botões extras ocupam 50% cada */
+  .botao {
+    width: 50%;
+  }
+}

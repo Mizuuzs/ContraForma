@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>ContraForma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ===========================
+         BARRA DE CATEGORIAS
+    =========================== -->
+    <div id="barra-categorias">
+        <div class="menu-lado">
+            <button onclick="filtrarCategoria('pagina')">PÁGINA INICIAL</button>
+            <button onclick="filtrarCategoria('sobre')">SOBRE</button>
+        </div>
+        <div id="logo">
+            <img src="Img/ContraForma.png" alt="Logo Contra Forma" height="200" />
+        </div>
+        <div class="menu-lado">
+            <button onclick="filtrarCategoria('quem')">QUEM SOMOS</button>
+            <button onclick="filtrarCategoria('extras')">EXTRAS</button>
+        </div>
+    </div>
+
+    <!-- ===========================
+         PÁGINA INICIAL (Livro)
+    =========================== -->
+    <div id="pagina-secao" class="visible">
+        <div id="livro-container">
+            <div class="pagina" id="pagina-esquerda"></div>
+            <div class="pagina" id="pagina-direita"></div>
+        </div>
+        <div id="controles">
+            <button onclick="voltar()">⭠</button>
+            <div id="contador">1 / 20</div>
+            <button onclick="avancar()">➡</button>
+            <button id="fullscreen-btn">🗖</button>
+        </div>
+    </div>
+
+    <!-- divisor entre seções -->
+    <div class="divisor-secao"></div>
+
+    <!-- ===========================
+         SEÇÃO SOBRE
+    =========================== -->
+    <div id="sobre-secao-custom" class="visible">
+        <div class="lado-esquerdo">
+            <img src="Img/sobre-etiquetas.png" alt="Etiquetas Sobre" class="etiquetas" />
+            <div class="fundo-estrelas"></div>
+        </div>
+        <div class="lado-direito">
+            <p>Olá! Nós do Contrafoma somos um grupo de estudantes de Design Gráfico realizando um trabalho proposto para nós, nesse primeiro semestre de 2025. O tema proposto para a Fanzine era “decolonial”, e fizemos como foco nada mais nada, nada menos, do que algo que está ao nosso redor no dia a dia, o Grafite!</p>
+            <p>Escolhemos a linguagem informal e local para termos uma proximidade melhor com nosso leitor, de forma que a leitura fosse mais dinâmica, e, justamente, quebrando esse padrão de “linguagem perfeita”, trazendo também mais ligação com o tema, já que o grafite não é formal, é vivência, e principalmente, algo de rua.</p>
+            <p>As fontes escolhidas foram pensadas também para trazer ligação com o tema. Já as cores, queríamos algo colorido e divertido, organizamos a ordem para que as páginas consecutivas da outra possuíssem tons semelhantes e também tomamos o cuidado de manter as letras legíveis mesmo com os diferentes tons de cores.</p>
+        </div>
+    </div>
+
+    <!-- ===========================
+         BALÕES ABAIXO DO PDF
+    =========================== -->
+    <div class="pagina-com-balao">
+        <img src="Img/PaginaTexto.png" alt="Página png" class="pagina-png" />
+    </div>
+
+    <!-- ===========================
+      SEÇÃO QUEM SOMOS
+    =========================== -->
+    <div id="quem-secao-custom">
+        <div class="qs-conteudo">
+            <!-- Título -->
+            <img src="Img/CONHEÇA A FIRMA.png"
+                 alt="Conheça a Firma"
+                 class="qs-titulo" />
+
+            <div class="qs-wrapper">
+                <div class="qs-botoes">
+                    <img src="Img/botão azul.png" alt="Kauan" class="qs-btn" />
+                    <img src="Img/botão verde.png" alt="Renan" class="qs-btn" />
+                    <img src="Img/botão amarelo.png" alt="Niko" class="qs-btn" />
+                    <img src="Img/botão laranja.png" alt="Glenda" class="qs-btn" />
+                    <img src="Img/botão vermelho.png" alt="Lara" class="qs-btn" />
+                    <img src="Img/botão rosa.png" alt="Amanda" class="qs-btn" />
+                </div>
+                <!-- PNG grande aparece aqui -->
+                <div class="qs-display">
+                    <img id="qs-card" src="" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===========================
+         SEÇÃO EXTRAS
+    =========================== -->
+    <section id="extras-secao">
+        <img src="Img/Extras Complexo.png" alt="Fundo Extras" class="fundo" />
+
+        <a href="https://drive.google.com/drive/folders/1rtehNvdOldkdQNEom-EW-dGIA-bfGrWw?usp=drive_link" target="_blank">
+            <img src="Img/Esboço.png" alt="Ver Esboços" class="botao esboco" />
+        </a>
+
+        <a href="https://youtu.be/yx2u13n8bvI?si=nXuwB6MJyGa3RNXq" target="_blank">
+            <img src="Img/Entrevista.png" alt="Assistir Entrevista" class="botao entrevista" />
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1f5EOhpdWblhnLk7YtgcANc9FJAx9qPAW?usp=drive_link" target="_blank">
+            <img src="Img/Galeria.png" alt="Ver Galeria" class="botao galeria" />
+        </a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
