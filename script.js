@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const conteudoPaginas = [
         "Img/capa.png",
         "Img/Errata.png",
-        "Img/indíce.png",
+        "Img/indice.png",
         "Img/O que é.png",
         "Img/História.png",
         "Img/Origem Brasil.png",
